@@ -1,11 +1,10 @@
+/* See LICENSE file for copyright and license details. */
 // __  __            _           ______        ____  __
 //|  \/  | __ _ _ __| | _____   |  _ \ \      / /  \/  | 
 //| |\/| |/ _` | '__| |/ / _ \  | | | \ \ /\ / /| |\/| |
 //| |  | | (_| | |  |   < (_) | | |_| |\ V  V / | |  | |
 //|_|  |_|\__,_|_|  |_|\_\___/  |____/  \_/\_/  |_|  |_|
 //
-
-/* See LICENSE file for copyright and license details. */
 
 /* appearance */
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
@@ -45,7 +44,8 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "Main", "Music", "Video", "VM", "Steam", "6", "7", "8", "9" };
+static const char *tags[] = { "Main", "Music", "Video", "VM", "Steam", "oth1", "oth2", "oth3", "oth4" };
+static const char *tagsalt[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -93,7 +93,7 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
-static const char *termcmd[]  = { "termite", NULL };
+static const char *termcmd[]  = { "st", NULL };
 static const char *browser[] = {"firefox", NULL};
 
 
@@ -129,6 +129,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
+    { MODKEY,                       XK_n,      togglealttag,   {0} },
 	{ MODKEY,                       XK_minus,  setgaps,        {.i = -1 } },
 	{ MODKEY,                       XK_equal,  setgaps,        {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_equal,  setgaps,        {.i = 0  } },
