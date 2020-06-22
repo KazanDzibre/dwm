@@ -120,6 +120,8 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_l,      setlayout,      {.v = &layouts[3]} },
 	{ MODKEY,                       XK_r,      setlayout,      {.v = &layouts[4]} },
 	{ MODKEY|ShiftMask,             XK_r,      setlayout,      {.v = &layouts[5]} },
+    { MODKEY,			            XK_bracketleft,		spawn,		SHCMD("amixer set Master 5%-") },
+    { MODKEY,			            XK_bracketright,		spawn,		SHCMD("amixer set Master 5%+") },
     { MODKEY,                       XK_space,  setlayout,      {0} },
 	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
     { MODKEY|ShiftMask,             XK_f,      fullscreen,     {0} },
