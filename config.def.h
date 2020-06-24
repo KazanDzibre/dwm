@@ -19,7 +19,7 @@ static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
 static const char col_gray4[]       = "#eeeeee";
-static const char col_cyan[]        = "#cc2446";
+static const char col_cyan[]        = "#3c319b"; //"#1b1268"; //"#cc2446";
 
 /* solarized colors http://ethanschoonover.com/solarized */
 static const char s_base03[]        = "#002b36";
@@ -35,16 +35,16 @@ static const char s_base3[]         = "#fdf6e3";
 
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
-    { s_base0, s_base03, s_base2 },      /* SchemeNorm dark */
+	{ col_gray3, col_gray1, col_gray2 }, /* SchemeNorm orig */
+	{ col_gray4, col_cyan,  col_cyan  }, /* SchemeSel orig */
+    	{ s_base0, s_base03, s_base2 },      /* SchemeNorm dark */
 	{ s_base0, s_base02, s_base2 },      /* SchemeSel dark */
 	{ s_base00, s_base3, s_base02 },     /* SchemeNorm light */
 	{ s_base00, s_base2, s_base02},      /* SchemeSel light */
-	{ col_gray3, col_gray1, col_gray2 }, /* SchemeNorm orig */
-	{ col_gray4, col_cyan,  col_cyan  }, /* SchemeSel orig */
 };
 
 /* tagging */
-static const char *tags[] = { "Main", "Music", "Video", "VM", "Steam", "oth1", "oth2", "oth3", "oth4" };
+static const char *tags[] = { "\U0001F30D", "\U0001F3B5", "\U0001F4FD", "\U0001F3AE", "\U0001F340", "\U0001F340", "\U0001F340", "\U0001F340", "\U0001F340" };
 static const char *tagsalt[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 
 static const Rule rules[] = {
@@ -68,7 +68,6 @@ static const int resizehints = 1;    /* 1 means respect size hints in tiled resi
 
 #include "tcl.c"
 #include "fibonacci.c"
-
 static const Layout layouts[] = {
 	/* symbol     arrange function */
 	{ "[]=",      tile },    /* first entry is default */
@@ -114,7 +113,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_z,      zoom,           {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
 	{ MODKEY|ShiftMask,             XK_c,      killclient,     {0} },
-	{ MODKEY|ShiftMask,             XK_t,      setlayout,      {.v = &layouts[0]} },
+    { MODKEY|ShiftMask,             XK_t,      setlayout,      {.v = &layouts[0]} },
 	{ MODKEY|ShiftMask,             XK_p,      setlayout,      {.v = &layouts[1]} },
 	{ MODKEY|ShiftMask,             XK_m,      setlayout,      {.v = &layouts[2]} },
 	{ MODKEY|ShiftMask,             XK_l,      setlayout,      {.v = &layouts[3]} },
