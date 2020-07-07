@@ -68,6 +68,7 @@ static const int resizehints = 1;    /* 1 means respect size hints in tiled resi
 
 #include "tcl.c"
 #include "fibonacci.c"
+#include "unfloat.c"
 static const Layout layouts[] = {
 	/* symbol     arrange function */
 	{ "[]=",      tile },    /* first entry is default */
@@ -112,6 +113,8 @@ static Key keys[] = {
 	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
 	{ MODKEY,                       XK_z,      zoom,           {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
+	{ MODKEY|ShiftMask,             XK_space,  unfloatvisible, {0} },
+	{ MODKEY|ShiftMask,             XK_u,      unfloatvisible, {.v = &layouts[0]} },
 	{ MODKEY|ShiftMask,             XK_c,      killclient,     {0} },
     { MODKEY|ShiftMask,             XK_t,      setlayout,      {.v = &layouts[0]} },
 	{ MODKEY|ShiftMask,             XK_p,      setlayout,      {.v = &layouts[1]} },
@@ -119,8 +122,9 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_l,      setlayout,      {.v = &layouts[3]} },
 	{ MODKEY,                       XK_r,      setlayout,      {.v = &layouts[4]} },
 	{ MODKEY|ShiftMask,             XK_r,      setlayout,      {.v = &layouts[5]} },
-    { MODKEY,			            XK_bracketleft,		spawn,		SHCMD("amixer set Master 5%-") },
-    { MODKEY,			            XK_bracketright,		spawn,		SHCMD("amixer set Master 5%+") },
+    { MODKEY,			            XK_bracketleft,		spawn,		SHCMD("amixer set Master 2-") },
+    { MODKEY,			            XK_bracketright,	spawn,		SHCMD("amixer set Master 2+") },
+    { MODKEY,			            XK_x,	   spawn,		   SHCMD("deepin-screenshot") },
     { MODKEY,                       XK_space,  setlayout,      {0} },
 	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
     { MODKEY|ShiftMask,             XK_f,      fullscreen,     {0} },
