@@ -19,7 +19,7 @@ static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
 static const char col_gray4[]       = "#eeeeee";
-static const char col_cyan[]        = "#3c319b"; //"#1b1268"; //"#cc2446";
+static const char col_cyan[]        = "#000000"; /*"#3c319b"; "#1b1268"; "#cc2446";*/
 
 /* solarized colors http://ethanschoonover.com/solarized */
 static const char s_base03[]        = "#002b36";
@@ -44,7 +44,7 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "\U0001F30D", "\U0001F3B5", "\U0001F4FD", "\U0001F3AE", "\U0001F340", "\U0001F340", "\U0001F340", "\U0001F340", "\U0001F340" };
+static const char *tags[] = { "", "", "", "", "", "", "", "", "ﳜ" };
 static const char *tagsalt[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 
 static const Rule rules[] = {
